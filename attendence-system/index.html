@@ -1,0 +1,155 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>owner</title>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+    <link href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>SMART ATTENDANCE SYSTEM</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-header d-flex" style="justify-content:space-between">
+              <div>
+                <i class="fa fa-table mr-1"></i>
+                <span>Attendance Summary</span>
+              </div>  
+                <button type="button" class="btn btn-primary" id="export">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered display responsive nowrap" id="buttonTable" width="100%"
+                        cellspacing="0" data-order="[]">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Device Id</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="attendanceData">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                <i class="fa fa-table mr-1"></i>
+                LIVE STATUS
+            </div>
+            <div class="card-body users">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script> <!-- Add Moment.js for date formatting -->
+
+
+    <script src="script.js"></script>
+
+    <script>
+
+
+
+
+
+
+
+
+
+// $(function () {
+        //     $('.users').html('No data available');
+        //     document.getElementById("export").onclick = function () { exportCSV() };
+
+        //     function exportCSV() {
+        //         //// export CSV
+        //         console.log("exportCSV");
+        //         $('#buttonTable').DataTable().button(0).trigger();
+        //     }
+
+        //     var button_table = $('#buttonTable').DataTable({
+        //         "ordering": false,
+        //         "paging": false,
+        //         buttons: [
+        //             {
+        //                 extend: 'csv',
+        //                 filename: 'file_name',
+        //                 extension: '.csv'
+        //             }
+        //         ],
+        //         initComplete: function () {
+        //             $('.buttons-csv').hide();
+        //         }
+        //     });
+
+        //     // Firebase initialization
+        //     var database = firebase.database();
+
+        //     // Fetch data from Firebase
+        //     database.ref('/').on('value', function (snapshot) {
+        //         var data = snapshot.val();
+
+        //         if (data && data.users) {
+        //             var users = data.users;
+        //             $('.users').html('');
+
+        //             Object.keys(users).forEach(function (key) {
+        //                 $('.users').append(`
+        //                 <div class="live">
+        //                     <img src="./img/checkin.png" width="150px">
+        //                     <ul>
+        //                         <li><h3>UID: ${key}</h3></li>
+        //                         <li>Status: ${users[key] == 1 ? 'Checked In' : 'Checked Out'}</li>
+        //                     </ul>
+        //                 </div>
+        //             `);
+        //             });
+        //         }
+
+        //         if (data && data.attendance) {
+        //             button_table.clear().draw();
+        //             var attendanceData = data.attendance;
+
+        //             Object.values(attendanceData).forEach(function (elem) {
+        //                 var row = `<tr>
+        //                     <td>${elem.uid}</td>
+        //                     <td>${elem.id}</td>
+        //                     <td>${moment(elem.time).format('MMMM Do YYYY, h:mm:ss a')}</td>
+        //                     <td>${elem.status == 1 ? 'Check In' : 'Check Out'}</td>
+        //                 </tr>`;
+        //                 button_table.rows.add($(row)).draw();
+        //             });
+        //         }
+        //     });
+
+        // });
+    </script>
+</body>
+
+</html>
